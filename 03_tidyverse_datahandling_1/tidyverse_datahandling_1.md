@@ -2,6 +2,8 @@
 
 # tidyverseとは
 
+
+
 >  tidyverseは以下のパッケージをまとめたパッケージ集．
 >
 > - ggplot2: グラフ描画パッケージ
@@ -38,6 +40,12 @@ https://www.tidyverse.org/
 
 # tidyverseの導入
 
+
+
+インストールは1度だけでOK
+
+library()はセッションが切れる度に必要
+
 ```R
 # インストール (1回のみ)
 install.packages("tidyverse")
@@ -72,6 +80,12 @@ length(d)
 
 
 ## 使用するデモデータ
+
+本記事でのデモデータおよびスクリプトファイルはFuk (tonegawa07) のGithubからもダウンロード可能
+
+https://github.com/tonegawa07/Lab_R_Seminar/tree/master/03_tidyverse_datahandling_1
+
+
 
 処理区: -Al区, +Al区
 
@@ -171,8 +185,6 @@ d=rawdata %>%
 print(d)
 ```
 
-
-
 ##### 2-2: Al-Zn列を抽出
 
 ```R
@@ -194,8 +206,6 @@ d=rawdata %>%
   slice(1)
 print(d)
 ```
-
-
 
 ##### 1-2: 1-5行目を抽出
 
@@ -225,8 +235,6 @@ d=rawdata %>%
 print(d)
 ```
 
-
-
 ##### 2-2: Alが1以上の列のみ抽出
 
 ```R
@@ -234,8 +242,6 @@ d=rawdata %>%
   filter(Al>=1)
 print(d)
 ```
-
-
 
 ##### 2-3: 複数条件を満たす列のみ抽出
 
@@ -259,6 +265,8 @@ d=rawdata %>%
   mutate(treatment=gsub(treatment,pattern="plus",replacement = "+"))
 print(d)
 ```
+
+
 
 #### Case study 2 - 新規の列を追加したい
 
@@ -429,6 +437,12 @@ print(d_mean_wide)
 
 
 ##### ungroup()
+
+group_byでグループ化したデータフレームは型がgrouped_dfになっている．
+
+グループ化を解除する場合dplyr::ungroup()で解除できる．
+
+※ grouped_dfであることが不都合な場合がある．
 
 ```R
 d_mean_sd=d_mean_sd %>% ungroup()
