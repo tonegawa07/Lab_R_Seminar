@@ -1,39 +1,40 @@
 
 
+### 20210712_Writing by YF
+
 # tidyverseとは
 
 
 
 >  tidyverseは以下のパッケージをまとめたパッケージ集．
 >
-> - ggplot2: グラフ描画パッケージ
+>  - ggplot2: グラフ描画パッケージ
 >
-> - dplyr: データ操作パッケージ
+>  - dplyr: データ操作パッケージ
 >
-> - tidyr: tidy dataを作るためのパッケージ
+>  - tidyr: tidy dataを作るためのパッケージ
 >
-> - readr: データファイル読み込みパッケージ
+>  - readr: データファイル読み込みパッケージ
 >
-> - purrr: 繰り返し計算を行うためのツール
+>  - purrr: 繰り返し計算を行うためのツール
 >
-> - tibble: tidyverseの世界で使うデータ形式。データフレームの一種
+>  - tibble: tidyverseの世界で使うデータ形式。データフレームの一種
 >
-> - stringr: 文字列操作ライブラリ
+>  - stringr: 文字列操作ライブラリ
 >
-> - forcats: ファクタ(因子)操作ライブラリ
+>  - forcats: ファクタ(因子)操作ライブラリ
 >
->   
+>  
 >
-> Rで表形式のデータ処理・解析をするための [tidyverse](https://www.tidyverse.org/)パッケージがとても良くできている。 Rを使うのに，別にtidyverseは使わなくても大抵のことはできるんだけど，Rの基本的なvectorとかmatrixとかarrayとかlapplyとかplotとかのお勉強はすっ飛ばして，さっさとtidyverseの世界に入った方が，可読性の高いスクリプトを早く書けるようになって良いのではと思う。
+>  Rで表形式のデータ処理・解析をするための [tidyverse](https://www.tidyverse.org/)パッケージがとても良くできている。 Rを使うのに，別にtidyverseは使わなくても大抵のことはできるんだけど，Rの基本的なvectorとかmatrixとかarrayとかlapplyとかplotとかのお勉強はすっ飛ばして，さっさとtidyverseの世界に入った方が，可読性の高いスクリプトを早く書けるようになって良いのではと思う。
 >
-> 
+>  
 >
-> 引用 (http://bcl.sci.yamaguchi-u.ac.jp/~jun/notebook/r/tidyverse/)
+>  引用 (http://bcl.sci.yamaguchi-u.ac.jp/~jun/notebook/r/tidyverse/)
 
 
 
 tidyverse HP
-
 https://www.tidyverse.org/
 
 
@@ -43,7 +44,6 @@ https://www.tidyverse.org/
 
 
 インストールは1度だけでOK
-
 library()はセッションが切れる度に必要
 
 ```R
@@ -452,3 +452,12 @@ d_mean_sd=d_mean_sd %>% ungroup()
 d_mean_wide=d_mean_wide %>% ungroup()
 ```
 
+
+
+これらを組み合わせれば，大半のことはできちゃいます．
+
+ex.) 
+
+p値でソートして上位だけ抽出する
+p値が0.05未満のみ抽出
+etc...
