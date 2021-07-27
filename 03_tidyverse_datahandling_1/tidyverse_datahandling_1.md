@@ -336,6 +336,11 @@ print(d)
 | minusAl   | 1    | NL   | Mn        | 0.593645733 |
 | minusAl   | 1    | NL   | Zn        | 0.027605377 |
 
+pivot_longerの引数
+
+- names_to: もともと列名だったものが入る列の名称を指定できる．デフォルトは"name" (何も指定しなければ"name"になる)
+- values_to: nameに対応する値が入る列の名称を指定できる．デフォルトは"value" (何も指定しなければ"value"になる)
+
 ```R
 # 列名で指定
 d=rawdata %>% 
@@ -355,6 +360,11 @@ print(d)
 #### Case study 1 - wideなデータにする
 
 pivot_longerの逆で，wideなデータにする
+
+pivot_widerの引数
+
+- names_from: 新たに列名にする列．
+- values_from: 値が入っている列．
 
 ```R
 # 一度longデータを作る
